@@ -1,0 +1,35 @@
+body {
+            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .description {
+            margin-bottom: 20px;
+        }
+        .custom-navbar {
+            background-color: #f0f0f0;
+        }
+        .custom-header {
+            color: #3D9266;
+            margin-right: 20px;
+        }
+        .section-header {
+            background-color: #3D9266;
+            color: white;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #E74C3C;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .margen-superior {
+            margin-top: 100px;
+        }
+
+        .alert {
+            margin-top: 20px;
+        }
+        

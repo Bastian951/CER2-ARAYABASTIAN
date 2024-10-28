@@ -1,0 +1,17 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Registro - Tienda Verde{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center">Registro de Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+    </form>
+    <div class="mt-3">
+        <a href="{% url 'login' %}">¿Ya tienes cuenta? Inicia sesión</a>
+    </div>
+</div>
+{% endblock %}

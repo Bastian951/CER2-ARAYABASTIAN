@@ -1,0 +1,10 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Tienda Verde - Compra Confirmada{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center">Compra Confirmada</h2>
+    <p class="text-center">¡Compra ingresada con éxito!</p>
+    <a href="{% url 'productos' %}" class="btn btn-primary">Volver a la Tienda</a>
+</div>
+{% endblock %}

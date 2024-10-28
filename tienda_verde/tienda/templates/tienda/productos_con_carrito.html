@@ -1,0 +1,19 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Tienda Verde - Productos y Carrito{% endblock %}
+{% block content %}
+<div class="container d-flex">
+    <div class="productos col-8">
+        <h2 class="section-header">Productos</h2>
+        <!-- Aquí incluirías el listado de productos -->
+        {% include 'tienda/productos.html' %}
+    </div>
+    {% if productos|length > 0 %}  <!-- Verifica si hay productos en el carrito -->
+        <div class="carrito col-4">
+            <h2 class="section-header">Tu Carrito</h2>
+            <!-- Aquí incluirías el carrito -->
+            {% include 'tienda/carrito.html' %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'tienda/base.html' %}  <!-- Debe ser la primera línea -->
+{% load static %}  <!-- Carga la etiqueta static -->
+
+{% block title %}Tienda Verde - Productos{% endblock %}
+{% block containersuperior %}
+{% endblock %}
+{% block content %}
+
+{% if messages %}
+    <div class="alert alert-success" role="alert">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+        <div class="mt-2">
+            <a href="{% url 'ver_carrito' %}" class="btn btn-primary">Ir a Pagar</a>
+            <a href="{% url 'productos' %}" class="btn btn-secondary">Seguir Comprando</a>
+        </div>
+    </div>
+{% endif %}
+
+
+<div class="container my-5">
+    <div class="description text-center">
+        <h2 class="section-header">LISTADO DE PRODUCTOS</h2>
+    </div>
+
+    <div class="products-container d-flex flex-wrap justify-content-center">
+        {% for producto in productos %}
+            <div class="card m-3" style="width: 18rem;">
+                <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <p class="card-text">{{ producto.descripcion }}</p>
+                    <p class="price text-center">
+                        <button class="btn btn-primary" style="width: 100%;">${{ producto.precio }}</button>
+                    </p>
+                        <div class="d-flex justify-content-between">
+                        
+                        <form method="post" action="{% url 'agregar_al_carrito' producto.id %}">
+                            {% csrf_token %}
+                            <button type="submit" name="comprar" class="btn btn-success">Comprar</button>
+                        </form>
+                        
+                        <button class="btn btn-danger" onclick="location.href='{% url 'agregar_al_carrito' producto.id %}'">Añadir al carrito</button>
+
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No hay productos disponibles.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Tienda Verde - Inicio{% endblock %}
+
+{% block containersuperior %}
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+    <img src="{% static 'img/Banner_Oferta.png' %}" class="d-none d-md-block" style="width:100%">
+    <img src="{% static 'img/Banner_Oferta_Movil.png' %}" class="d-block d-md-none" style="width:100%">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container my-5">
+        <div class="description text-center">
+            <h2 class="custom-header">DESCUBRE TIENDA VERDE</h2>
+            <p>En Tienda Verde, nos comprometemos con el cuidado del planeta ofreciendo productos ecológicos y sostenibles para tu día a día...</p>
+            <p class="custom-header"><b>¡Sé parte del cambio hacia un futuro más verde!</b></p>
+        </div>
+
+        <div class="description text-center">
+            <h2 class="section-header">PRODUCTOS DESTACADOS <span class="highlight"><b>¡OFERTA!</b></span></h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/PROD1.gif' %}" class="card-img-top" alt="Producto de Belleza Sostenible">
+                    <div class="card-body">
+                        <h5 class="card-title">Belleza Sostenible</h5>
+                        <p class="card-text">
+                            Descubre nuestra selección de productos de belleza sostenibles con un <strong>10% de descuento</strong>. Estos productos están formulados con ingredientes naturales y empaquetados en envases ecológicos, perfectos para quienes buscan cuidar su piel y el planeta. ¡No te pierdas la oportunidad de lucir radiante mientras apoyas una causa responsable!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/PROD2.gif' %}" class="card-img-top" alt="Bebidas Vegetales">
+                    <div class="card-body">
+                        <h5 class="card-title">Nutrición Verde</h5>
+                        <p class="card-text">
+                            Explora nuestra gama de <strong>bebidas vegetales</strong> con un <strong>10% de descuento</strong>. Estas bebidas están elaboradas con ingredientes 100% naturales y sostenibles, ofreciendo una alternativa deliciosa y nutritiva para tu dieta diaria. Perfectas para quienes buscan opciones saludables y responsables con el medio ambiente. ¡Aprovecha esta oferta y brinda por tu bienestar!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/PROD3.gif' %}" class="card-img-top" alt="Productos para Mascotas">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco-Mascotas</h5>
+                        <p class="card-text">
+                            Descubre nuestra línea de <strong>productos para mascotas</strong> con un <strong>10% de descuento</strong>. Diseñados pensando en el bienestar de tus compañeros peludos, utilizando ingredientes naturales. Ofrecen todo lo que tu mascota necesita para estar feliz y saludable mientras apoyas un mundo más verde. ¡No te pierdas esta oportunidad de mimar a tu mascota de manera responsable!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
